@@ -21,11 +21,12 @@ public class Solution {
 
 	public int lengthOfLongestSubstring(String s) {
 
-		int maxLen = 0;
-
 		Map<Character, Integer> charPos = new HashMap<>();
 		char[] charArr = s.toCharArray();
-		int temp = 0;
+		// 记录最终的最大长度
+		int maxLen = 0;
+		// 记录出现重复字符后的临时长度
+		int temp = 0;		
 		for (int i=0;i<charArr.length;i++) {
 			if (!charPos.containsKey(charArr[i])) {
 				charPos.put(charArr[i], i);
